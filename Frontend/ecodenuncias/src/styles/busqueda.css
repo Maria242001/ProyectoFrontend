@@ -1,0 +1,221 @@
+/* FONDO GENERAL */
+.busqueda-page {
+  background: url("/assets/fondo.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------- ENCABEZADO ---------- */
+.encabezado {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 20px;
+}
+
+.ley {
+  color: #003366;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.logo {
+  width: 100px;
+  margin-right: 20px;
+}
+
+/* ---------- TITULO ---------- */
+.titulo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 40px;
+  color: #268626;
+  margin-top: -10px;
+  margin-left: 60px;
+  align-self: flex-start;
+}
+
+.titulo img {
+  width: 60px;
+  height: 60px;
+}
+
+/* ---------- CAJA PRINCIPAL ---------- */
+.caja-principal {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  width: 90%;
+  max-width: 2000px;
+  padding: 25px;
+  margin-top: 10px;
+  min-height: 500px;
+}
+
+.titulo-caja {
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #30561f; /* AÑADIDO: Color verde oscuro */
+}
+
+/* ---------- BARRA DE BUSQUEDA ---------- */
+.barra-busqueda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.barra-busqueda input {
+  width: 200px;
+  padding: 5px;
+  border-radius: 6px;
+  border: none;
+}
+
+.boton-buscar {
+  background-color: #30561f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.filtro {
+  padding: 5px;
+  border-radius: 6px;
+  border: none;
+}
+
+.boton-regresar {
+  background-color: #d9d9d9;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+/* ---------- TABLA ---------- */
+.tabla-denuncias {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.tabla-denuncias th {
+  background-color: rgba(120, 200, 100, 0.4);
+  padding: 8px;
+  font-size: 16px;
+  color: #30561f;
+}
+
+.tabla-denuncias td {
+  padding: 6px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Colores para los estados */
+/* Colores para los estados (AJUSTADO) */
+
+.estado.en-tramite {
+  color: #f47c22; /* El color de la letra (naranja) se mantiene */
+  background-color: transparent; /* Quita el fondo de la celda */
+  padding: 6px; /* Asegura que el padding sea el mismo que el de las otras celdas */
+}
+
+.estado.resuelta {
+  color: green; /* El color de la letra (verde) se mantiene */
+  background-color: transparent; /* Quita el fondo de la celda */
+  padding: 6px; 
+}
+
+.estado.vencida {
+  color: red; /* El color de la letra (rojo) se mantiene */
+  background-color: transparent; /* Quita el fondo de la celda */
+  padding: 6px; 
+}
+/* ---------- FRASE FINAL ---------- */
+.frase-final {
+  font-size: 26px;
+  color: white;
+  margin-top: 15px;
+  text-shadow: 2px 2px 4px #000;
+  align-self: flex-start;
+}
+
+/* --- ESTILOS DEL CONTENEDOR DE OPCIONES (El "cuadrito") --- */
+.filtro-opciones {
+  position: absolute;
+  top: 100%;
+  right: 0; /* Alinear a la derecha para que no se salga de la pantalla si el botón está cerca del borde */
+  left: auto; /* Desactiva la alineación a la izquierda */
+  background-color: #fff;
+  border: 1px solid #ccc; /* Borde más definido */
+  border-radius: 4px; /* Bordes menos redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Sombra más sutil */
+  padding: 5px 0; /* Menos padding vertical */
+  min-width: 150px; /* Ancho más pequeño */
+  max-width: 180px; /* Ancho máximo más pequeño */
+  font-size: 13px; /* Fuente un poco más pequeña */
+}
+
+/* --- ESTILOS DEL TÍTULO DENTRO DEL MENÚ --- */
+.filtro-titulo {
+  font-weight: 600; /* Peso de fuente semi-negrita */
+  color: #333;
+  padding: 3px 12px; /* Menos padding */
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* --- ESTILOS DE LA LÍNEA SEPARADORA --- */
+.filtro-separator {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 3px 0; /* Margen más pequeño */
+}
+
+/* --- ESTILOS DE CADA OPCIÓN Y CHECKBOX --- */
+.opcion-filtro-label {
+  display: flex;
+  align-items: center;
+  padding: 5px 12px; /* Padding reducido para hacerlo más compacto */
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  line-height: 1.2; /* Espaciado de línea más ajustado */
+}
+
+.opcion-filtro-label:hover {
+  background-color: #f0f0f0; /* Fondo más sutil al pasar el ratón */
+}
+
+.opcion-filtro-label input[type="checkbox"] {
+  margin-right: 8px; /* Espacio más pequeño entre el checkbox y el texto */
+  transform: scale(0.9); /* Opcional: hacer el checkbox ligeramente más pequeño */
+  accent-color: #4CAF50;
+}
+
+/* --- ESTILOS DEL BOTÓN DE ENCABEZADO (Ajuste menor) --- */
+.filtro-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+  z-index: 1000;
+}
+
+.filtro-header {
+  /* Mantener estilos de botón, pero asegurar que el tamaño sea consistente */
+  padding: 7px 10px; /* Padding ligeramente reducido */
+  font-size: 13px; /* Fuente más pequeña en el botón */
+}

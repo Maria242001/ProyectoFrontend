@@ -1,0 +1,35 @@
+.consulta-fondo {
+  background-image: url("../assets/fondo.png"); /* tu imagen */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+  color: #000;
+}
+
+.titulo-consulta {
+  margin-top: 60px;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.formulario-box {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  padding: 35px;
+  margin-top: 30px;
+  max-width: 800px;
+}
+
+.frase-eco {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 5px #000;
+  font-family: "Just Another Hand", cursive;
+}

@@ -1,0 +1,59 @@
+.consulta-solicitud-page {
+  margin-top: 40px;
+}
+
+.titulo-consulta {
+  color: #2e7d32;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.card-datos,
+.card-comentarios {
+  border-radius: 15px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+}
+
+.label-col {
+  text-align: left;
+}
+
+.comentario-texto {
+  font-size: 15px;
+  color: #333;
+}
+
+.boton-descargar,
+.boton-finalizar {
+  border-radius: 25px;
+  font-weight: 600;
+  padding: 10px 30px;
+  transition: all 0.3s ease;
+}
+
+.boton-descargar {
+  background-color: #2e7d32;
+  border: none;
+}
+
+.boton-descargar:hover {
+  background-color: #1b5e20;
+  transform: scale(1.03);
+}
+.boton-finalizar {
+  background-color: #2e7d32;   /* mismo verde */
+  color: #ffffff;              /* texto blanco */
+  border: none;
+  padding: 10px 26px;          /* mismo tamaño del botón Descargar */
+  border-radius: 50px;         /* forma redonda */
+  font-weight: 700;            /* bold como en tu botón */
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.boton-finalizar:hover {
+  background-color: #256528;   /* un verde más oscuro al pasar el mouse */
+  transform: scale(1.03);
+}

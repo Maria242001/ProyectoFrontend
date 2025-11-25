@@ -1,0 +1,187 @@
+/* Fondo general */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.main-bg {
+  background-image: url('../assets/icons/fondo.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  display: flex;
+}
+
+
+.nav-link {
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #d1f0d1;
+  color: #1e7e34 !important;
+}
+
+.active-link {
+  background-color: #c7f9cc;
+  color: #1e7e34 !important;
+  font-weight: bold;
+}
+
+.text-succes {
+  margin-left: 100px;
+}
+
+/*imagen logo*/
+.logo {
+  float: right;
+  width: 150px;
+  height: auto;
+  margin-left: auto;
+}
+
+.iconoFuncionario {
+  width: 50px;
+}
+
+/* === Contadores === */
+.card-counter {
+  background-color: white;
+  border-radius: 8px;
+  padding: 5px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  border-left: 5px solid #2d6a4f;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  gap: 30px;
+}
+
+.card-counter.rolPer {
+  gap: 2px;
+  height: 65px;
+}
+
+.counterIcon {
+  background-color: #1e7e34;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  border-radius: 6px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center; 
+}
+
+.iconoRolesPermisos {
+  width: 35px;
+}
+
+.card-counter.active {
+  color: #198754;
+}
+.iconoActivo {
+  width: 30px;
+}
+
+.card-counter.inactive {
+  color: #dc3545;
+  border-left-color: #dc3545;
+}
+.iconoInactivo {
+  width: 30px;
+}
+
+.card-counter:hover {
+  transform: scale(1.05);
+}
+
+/* === Tabla === */
+.table-container {
+  background-color: white;
+  border-radius: 10px;
+  max-width: 98%;
+  margin-left: 16px;
+  padding: 10px;
+  max-height: 40vh;
+  overflow-y: auto;
+  overflow-x: auto; 
+}
+
+.table thead {
+  background-color: #b7e4c7 !important;
+  color: #1b4332;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f9f1;
+  transition: 0.2s ease-in-out;
+}
+
+/* contenedor de tabla*/
+.content-table {
+  background-color: rgba(255, 255, 255, 0.50);
+  max-width: 100%;
+  border-radius: 10px;
+  padding: 20px; 
+}
+
+/* === Botones === */
+.herramientas {
+  min-height: 50px;
+  max-width: 98%;
+  margin-left: 10px;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  border: none;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #b02a37;
+}
+
+.btn-outline-danger {
+  font-weight: bold;
+  border-width: 2px;
+}
+
+/* === Buscador === */
+.search-box {
+  max-width: 200px;
+}
+
+/* === Scrollbar personalizado === */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #74c69d;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #52b788;
+}

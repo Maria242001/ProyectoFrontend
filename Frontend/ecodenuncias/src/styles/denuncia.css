@@ -1,0 +1,279 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  /* Fuente manuscrita para toda la aplicación */
+  font-family: "Segoe UI", sans-serif;
+  background: url("../assets/fondo.png") no-repeat center center fixed;
+  /* Asegúrate de que la ruta del fondo sea correcta */
+  background-size: cover;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* ------------------------------------------- */
+/* ---------- CONTENEDOR PRINCIPAL ---------- */
+/* ------------------------------------------- */
+.detalle-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  color: #2b3b1f;
+  /* Color base de texto */
+  text-shadow: 0 0 1px #fff;
+}
+
+/* ------------------------------------------- */
+/* ---------- ENCABEZADO SUPERIOR ---------- */
+/* ------------------------------------------- */
+.detalle-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* CAMBIO CLAVE 1: Reducimos el padding de 60px a 40px */
+  padding: 5px 60px 5px 40px;
+  font-weight: bold;
+  
+}
+
+.detalle-header .ley {
+  color: #4b58a7;
+  font-size: 15px;
+  font-weight: bold;
+  /* Margen negativo para forzar la Ley a subir al borde */
+  margin-top: -5px;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  margin-top: 0;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* ------------------------------------------- */
+/* ---------- TÍTULO PRINCIPAL ("DENUNCIAS") ---------- */
+/* ------------------------------------------- */
+.titulo-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start !important;  /* 🔥 Alinea todo a la izquierda */
+  gap: 10px;
+  width: 100%;
+  padding-left: 5%;
+  margin-right: auto;
+}
+
+.titulo-izquierda {
+  text-align: left !important;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.icono-alarma {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+/* ------------------------------------------- */
+/* ---------- MAIN Y CAJA PRINCIPAL DE DATOS ---------- */
+/* ------------------------------------------- */
+.detalle-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;   /* 🔥 Ahora sí permite que el título vaya a la izquierda */
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.detalle-box {
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  margin: 10px auto 10px auto;
+  flex-grow: 1;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+}
+
+.counterGraficas {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  
+}
+
+
+/* ------------------------------------------- */
+/* ---------- ESTILOS ESPECÍFICOS DEL DASHBOARD ---------- */
+/* ------------------------------------------- */
+
+/* Estilo para todos los botones del menú lateral (btn-light de Bootstrap) */
+.detalle-box .btn-light {
+  /* Mantenemos el fondo semitransparente para el menú lateral */
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #30561f;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 14px;
+  text-align: left;
+  font-family: "Segoe UI", sans-serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s;
+}
+
+/* Estilo para el botón 'Inicio' seleccionado (active-menu-btn) */
+.detalle-box .active-menu-btn {
+  font-weight: bold;
+  background-color: #d8e7d1;
+  /* Fondo ligeramente más oscuro/verde */
+}
+
+/* Estilo general para las tarjetas de conteo */
+.custom-card-total,
+.custom-card-resueltas,
+.custom-card-tramite,
+.custom-card-vencidas {
+  margin-top: -20px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #30561f;
+  border-radius: 14px;
+  padding: 20px;
+  width: 230px;       /* 🔥 Ajustado para que 4 tarjetas quepan en una fila */
+  height: 100px;      /* Un poco más largas */
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+  margin-right: 50px; /* Separación entre tarjetas */
+}
+
+
+
+/* NUEVO ESTILO: Recuadro del Icono (Verde Oscuro) */
+.icon-box {
+  /* Fondo verde oscuro */
+  background-color: #30561f;
+  /* Dimensiones cuadradas (similar a 50px x 50px) */
+  width: 50px;
+  height: 50px;
+  /* Bordes redondeados */
+  border-radius: 8px;
+  /* Centrar la imagen dentro del recuadro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Para que los íconos (si son de color, asuman el color blanco) */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  /* Sombra para que se vea en 3D */
+}
+
+.custom-card-total p,
+.custom-card-total h4 {
+  margin: 0;
+  color: #30561f;
+}
+
+/* Estilos de las tarjetas generales (mapa y gráfico) */
+.detalle-box .card {
+  /* Mantenemos un fondo semi-transparente para las tarjetas de contenido más grandes */
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15) !important;
+  border: none;
+}
+
+.detalle-box .card h5 {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  color: #4b58a7;
+  font-size: 18px;
+}
+
+
+/* ------------------------------------------- */
+/* ---------- PIE DE PÁGINA (Footer) ---------- */
+/* ------------------------------------------- */
+.detalle-footer {
+
+  text-align: center;
+  font-size: 14px;
+  color: blanchedalmond;
+  flex-shrink: 0;
+
+}
+
+.lema {
+  align-self: flex-start !important; /* 🔥 Se alinea a la izquierda */
+  text-align: left !important;
+  width: 100%; /* Para que el texto pueda alinearse dentro */
+  font-size: 30px;
+  margin-top: 360px;
+  padding-left: 10px;
+}
+
+
+/* Caja completa del menú */
+.menu-lateral {
+  background: rgba(255, 255, 255, 0.72);
+  /* blanco translúcido */
+  padding: 10px 15px;
+  border-radius: 15px;
+  width: 180px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+  /* sombra igual a la referencia */
+  margin-top: 25px;
+}
+
+/* Estilo de los botones */
+.menu-item {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 4px 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: #1f2c0f;
+  /* negro verdoso como en la imagen */
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* Estado hover (suave) */
+.menu-item:hover {
+  transform: translateX(4px);
+}
+
+/* Opción activa */
+.menu-item.active {
+  color: #4c8b42;
+  /* verde exacto de la foto */
+  font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+

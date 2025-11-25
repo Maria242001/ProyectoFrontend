@@ -1,0 +1,23 @@
+.home-container {
+  position: relative;
+}
+
+.home-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.home-logo {
+  width: 750px; /* ajusta según tu imagen */
+  max-width: 80%;
+  height: auto;
+    /*sombra sutil y moderna*/
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
+  animation: fadeIn 1.5s ease-in-out;
+
+}
+

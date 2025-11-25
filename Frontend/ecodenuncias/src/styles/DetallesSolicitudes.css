@@ -1,0 +1,270 @@
+/*
+ * ====================================
+ * 1. Fondo y Layout Principal
+ * ====================================
+ */
+
+.fondo-pagina {
+    /* Fija el fondo para toda la pantalla */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encabezado fijo en la parte superior */
+.encabezado-fijo {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+/* Contenedor principal sin scroll general */
+.main-content-area-fixed {
+    flex-grow: 1;
+    padding-top: 150px; /* espacio debajo del encabezado */
+    padding-bottom: 20px;
+    margin: 0 auto;
+    max-width: 1400px;
+    max-height: 650px;
+    width: 100%;
+    overflow-y: hidden; /* evita scroll general */
+}
+
+/*
+ * ====================================
+ * 2. Tarjeta principal y sub-cajas
+ * ====================================
+ */
+
+/* Tarjeta principal que contiene todas las sub-cajas */
+.main-details-card {
+    background-color: rgba(172, 171, 171, 0.9);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    min-height: calc(100vh - 120px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card body de la principal */
+.main-details-card .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+/* Fila de columnas internas que crece para ocupar todo el espacio */
+.main-details-card .card-body>.row {
+    flex-grow: 1;
+}
+
+/* Título de sección */
+.titulo-seccion-detalles {
+    margin-top: -60px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #004d40;
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   Sub-caja 1: Estado
+   ========================================= */
+.sub-card.info-card {
+    max-height: 230px;       /* altura máxima */
+    width: 50%;             /* ocupa toda la columna */
+    overflow: hidden; 
+    top: -50px;       /* evita que el contenido sobresalga */
+}
+
+/* Contenedor de scroll interno solo para contenido de la sub-caja */
+.sub-card.info-card .scroll-content-container {
+    max-height: 150px;       /* altura para scroll interno */
+    
+    padding-right: 5px;
+}
+
+/* Ajuste de texto interno */
+.sub-card.info-card p {
+    font-size: 0.8rem;
+    margin: 3px 0;
+    color: #333;
+}
+
+.sub-card-title {
+    font-size: 0.7rem;
+    margin-bottom: -4px;
+    margin-top: -25px;
+    
+}
+
+/* =========================================
+   Sub-caja 2: Adjuntos
+   ========================================= */
+.sub-card.adjuntos-card {
+    max-height: 170px;       /* altura máxima */
+    width: 50%;
+    overflow: hidden;
+    top: -80px;        /* evita que el contenido sobresalga */
+}
+
+/* Scroll interno para la lista de adjuntos */
+.sub-card.adjuntos-card .scroll-content-container {
+    max-height: 150px;       /* espacio para que el botón quede visible */
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Botón dentro de adjuntos (mantiene posición) */
+.adjuntos-card .d-grid {
+    margin-top: 5px;
+}
+
+/* =========================================
+   Sub-caja 3: Radicado
+   ========================================= */
+.sub-card.radicado-card {
+    height: 280px !important;       /* altura máxima */
+    min-width: 800px !important;
+    margin-left: -200px;
+    padding: 1px;
+    
+}
+
+.radicado-card {
+  padding-top: 40px !important; /* ajusta el valor según necesites */
+
+}
+
+.radicado-card .sub-card-title {
+  font-size: 1.2rem;   /* Ajusta el tamaño del texto */
+  font-weight: bold;    /* Opcional: más grueso */
+  margin-bottom: 0.6rem; /* Espacio debajo del título */
+}
+
+.radicado-card .radicado-info {
+  font-size: 1rem !important; /* más pequeño que el resto */
+  align-items: flex-start !important;
+}
+
+.radicado-card .radicado-numero {
+  font-size: 1.5rem;   /* más grande que los demás textos */
+  font-weight: bold;    /* destacado */
+  color: #333;          /* opcional: cambiar color */
+  margin-top: -30px ;
+  margin-left:  400px;
+}
+
+.radicado-card .sub-card-title.mt-3 {
+  margin-left: -730px; /* ajusta según lo necesites */
+}
+
+
+
+
+/* Scroll interno para el contenido del hecho */
+.hecho-contenido {
+    height: 90px;
+    overflow-y: auto;
+    background-color: #f0f8ff;
+    border: 1px solid #cceeff;
+    
+    padding: 10px;
+    font-size: 0.8rem;
+    
+}
+
+/* =========================================
+   Sub-caja 4: Actividades Realizadas
+   ========================================= */
+.sub-card.actividades-card {
+    max-height: 180px !important;       /* altura total de la sub-caja */
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #38a169;
+    width: 800px;
+    margin-left: -200px;
+    top: -70px;
+}
+
+
+.actividades-contenido {
+    max-height: 200px;       /* altura para scroll interno */
+    overflow-y: auto;
+    background-color: #f0f8ff;
+    margin-top: 30px !important;
+    border-radius: 6px;
+    
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* =========================================
+   Botones
+   ========================================= */
+.btn-regresar {
+    background-color: #004d40;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.btn-regresar:hover {
+    background-color: #00332a;
+}
+
+.btn-adjuntar,
+.btn-descargar,
+.btn-agregar {
+    background-color: #008080;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-weight: 300;
+    font-size: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.btn-adjuntar:hover,
+.btn-descargar:hover,
+.btn-agregar:hover {
+    background-color: #006666;
+}
+
+/* =========================================
+   Frase final
+   ========================================= */
+.frase {
+    text-align: left;
+    font-style: italic;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 4px black;
+}

@@ -1,0 +1,208 @@
+/* Fondo fijo */
+.fondo-pagina {
+  background: url("../assets/fondo.png") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #064e08;
+  padding-bottom: 60px; /* espacio para la frase final */
+}
+
+/* Encabezado */
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+  box-sizing: border-box;
+}
+
+.ley {
+  
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 1400px;
+}
+
+.titulo-funcionario {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 32px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.icono-funcionario {
+  width: 60px;
+  height: 60px;
+}
+
+.logo {
+  width: 180px;
+  min-height: 130px;
+}
+
+/* Contenedor de cajas (centrado y responsivo) */
+.contenedor-cajas {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;    /* más ancho para permitir las 3 capas */
+  margin: 35px auto 0;
+  height: auto;
+  min-height: 420px;
+  box-sizing: border-box;
+  top: 40px;
+}
+
+/* Cajas translúcidas - base */
+.caja {
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* centradas horizontalmente respecto al contenedor */
+  width: 100%;
+  box-sizing: border-box;
+  
+}
+
+/* Capa inferior (más grande, desplazada atrás) */
+.caja1 {
+  background-color: rgba(255, 255, 255, 0.28);
+  height: 550px;
+  width: 1400px;
+  margin-top: 90px;
+  z-index: 1;
+  transform: translateX(-50%) translateY(20px) scale(1); /* ligera separación */
+}
+
+/* Capa intermedia */
+.caja2 {
+  background-color: rgba(255, 255, 255, 0.45);
+  height: 460px;
+  width: 1300px;
+  top: 140px;
+  z-index: 2;
+  transform: translateX(-50%) translateY(10px);
+  position: absolute;
+}
+
+/* Capa superior (contenido real) */
+.caja3 {
+  background-color: rgba(255, 255, 255, 0.98);
+  position: relative;
+  top: 200px;
+  z-index: 3;
+  padding: 28px;
+  width: 92%;
+  height: 380px;        /* un poco más estrecha que el contenedor */
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  border-radius: 14px;
+  max-width: 1100px;
+}
+
+/* Ajustes para dispositivos pequeños */
+@media (max-width: 1000px) {
+  .contenedor-cajas { max-width: 95%; }
+  .caja1 { height: 420px; top: 30px; }
+  .caja2 { height: 380px; top: 18px; }
+  .caja3 { padding: 18px; width: 95%; }
+}
+
+/* === TÍTULOS INDEPENDIENTES (puedes mover top/left) === */
+
+/* Título dentro de la caja2 (Formato de Descarga) */
+.titulo-descarga {
+  position: absolute;
+  top: -50px;      /* ajusta verticalmente dentro de caja2 */
+  left: -10px;     /* ajusta horizontalmente dentro del contenedor */
+  font-size: 24px;
+  color: #2b4d1e;
+  font-weight: 700;
+  margin: 10px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Título dentro de la caja3 (Resultados) */
+.titulo-resultados {
+  position: absolute;
+  top: -30px;      /* ajusta verticalmente dentro de caja3 */
+  left: -10px;     /* ajusta horizontalmente dentro de caja3 */
+  font-size: 22px;
+  color: #2b4d1e;
+  font-weight: 700;
+  margin: -8px;
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* Si quieres posicionar el título de la caja1 también, añade .titulo-caja1 similar */
+
+/* === FORMULARIO === */
+.lista-resultados {
+  margin-top: 7px; /* deja espacio debajo del título */
+  text-align: left;
+}
+
+.lista-resultados label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.campo-texto {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width:  500px;
+  max-height: 30px;
+  margin-left: 8px;
+}
+
+.btn-regresar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background-color: #ffffffcc;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #aaa;
+  transition: 0.2s;
+}
+
+.btn-regresar:hover {
+  background-color: #e1e1e1;
+}
+
+
+.boton-siguiente {
+  text-align: right;
+  margin-top: 12px;
+  margin-right: -640px;
+}
+
+div.boton-siguiente button {
+  background-color: #ccc  ;
+  border: none;
+  padding: 2px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: -80px !important;
+
+}
+
+/* Frase final */
+.frase {
+  text-align: left;
+  font-style: italic;
+  font-size: 28px;
+  margin-top: 40px;
+  color: white;
+}

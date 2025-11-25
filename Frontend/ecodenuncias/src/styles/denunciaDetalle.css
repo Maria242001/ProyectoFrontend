@@ -1,0 +1,304 @@
+/* ------------------------------------------- */
+/* ---------- ESTILO GENERAL Y RESET ---------- */
+/* ------------------------------------------- */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: url("../assets/fondo.png") no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  box-sizing: border-box;
+  /* CLAVE 1: Eliminamos el scroll del navegador (ESTO ES CORRECTO) */
+  overflow: hidden; 
+}
+
+/* ------------------------------------------- */
+/* ---------- CONTENEDOR PRINCIPAL (DenunciaDetalle) ---------- */
+/* ------------------------------------------- */
+.detalle-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Ocupa el 100% de la altura visible */
+  overflow: hidden; /* Garantiza que el scroll solo sea interno */
+  color: #2b3b1f;
+  text-shadow: 0 0 1px #fff; 
+}
+
+/* ------------------------------------------- */
+/* ---------- ENCABEZADO SUPERIOR (Ley / Logo) ---------- */
+/* ------------------------------------------- */
+.detalle-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 60px 15px 60px; /* Añade 15px de padding superior (top) */
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Texto “Ley 2111 de 2021” */
+.detalle-header .ley {
+  color: #4b58a7;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.logo {
+  width: 120px;       /* Mantener el ancho deseado */
+  height: auto;       /* Asegura que la altura se ajuste proporcionalmente */
+  max-width: 100%;    /* Asegura que no desborde si el contenedor es muy pequeño */
+  object-fit: contain; /* Ajusta la imagen dentro de sus límites sin recortar */
+  margin-top: 0;      /* Mantener en 0 si no hay problema de espacio arriba */
+  padding: 5px;       /* Opcional: Añadir un pequeño padding si parece pegado a algo */
+  box-sizing: border-box; /* Asegura que el padding se incluya en el ancho/alto */
+}
+/* ------------------------------------------- */
+/* ---------- TÍTULO PRINCIPAL ("DENUNCIAS") ---------- */
+/* ------------------------------------------- */
+/* Evita que el ícono del título se corte */
+/* Contenedor para el icono y el título */
+.titulo-contenedor {
+  display: flex;         /* hace que los hijos estén en línea */
+  gap: 10px;             /* espacio entre icono y título */
+  color: #30561f;
+  margin-right: auto;
+  justify-content: flex-start !important;  /* 🔥 Alinea todo a la izquierda */
+  padding-left: 20px;
+  align-items: flex-start; /* Alinea el ícono y el texto al inicio */
+}
+
+
+.titulo {
+  font-size: 24px;       /* más grande */
+  font-weight: bold;     
+
+}
+
+.icono-alarma {
+  width: 55px;
+  height: 55px;
+}
+
+
+/* ------------------------------------------- */
+/* ---------- MAIN Y CAJA PRINCIPAL DE DATOS (Scrollable) ---------- */
+/* ------------------------------------------- */
+.detalle-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1; 
+  
+}
+
+.detalle-box {
+  width: 100%;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.7); 
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 15px 25px; 
+  margin: 10px auto 10px auto; 
+  
+  /* CLAVE: Usamos flex-grow y un max-height para asegurar que NO desborde el main. */
+  flex-grow: 1; 
+  max-height: calc(100vh - 120px); 
+  
+  /* CLAVE: Esta caja interna es la que hace scroll, pero solo si es necesario */
+  overflow-y: auto;
+}
+
+/* ------------------------------------------- */
+/* ---------- ORGANIZACIÓN DE COLUMNAS Y TARJETAS ---------- */
+/* ------------------------------------------- */
+.detalle-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px; 
+  flex-wrap: nowrap;
+}
+
+.columna-izquierda {
+  /* Hacemos la columna izquierda un poco más grande para compensar el espacio */
+  width: 40%; 
+  padding-right: 5px;
+}
+
+.columna-derecha {
+  /* Hacemos la columna derecha un poco más pequeña */
+  width: 60%; 
+  padding-left: 5px;
+}
+
+.card {
+  background: white; 
+  padding: 10px 15px; 
+  border-radius: 8px; 
+  margin-bottom: 15px; 
+  box-shadow: none; 
+  border: 1px solid rgba(0, 0, 0, 0.05); 
+}
+
+.card h2 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #30561f;
+  font-weight: 600;
+}
+
+.detalle-box > h2 {
+    font-size: 24px;
+    color: #4b58a7;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+/* Contenedor de la izquierda (Estado, Denunciante, etc.) */
+.datos-linea {
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+.datos-linea span {
+  font-weight: bold; 
+  color: #2b3b1f;
+}
+
+.ultima-actualizacion {
+  font-size: 12px;
+  color: #777;
+  margin-top: 10px;
+  display: block;
+}
+
+.estado-linea {
+  border-bottom: 2px solid #f47c22;
+  width: 30px;
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+
+.estado {
+  background: #f47c22;
+  color: white;
+  padding: 1px 4px; 
+  border-radius: 4px; 
+  font-size: 12px;
+  display: inline-block;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+.radicado-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; 
+  margin-bottom: 10px;
+}
+
+.codigo {
+  font-weight: bold;
+  color: #30561f;
+  font-size: 16px;
+}
+
+.btn-regresar {
+    background-color: #d8e7d1;
+    color: #30561f;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s;
+}
+
+.radicado-data {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.radicado-data span {
+    font-weight: bold;
+    margin-right: 5px;
+    color: #2b3b1f;
+}
+
+/* Área de Texto (Hecho y Actividades) */
+textarea {
+  width: 100%;
+  /* CLAVE PARA NO HACER SCROLL: Reducimos la altura */
+  height: 50px; 
+  resize: none;
+  border-radius: 4px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+  /* Eliminamos el scroll interno de los textareas para que no se vean barras */
+  overflow: hidden; 
+}
+
+/* Lista de adjuntos */
+.lista-adjuntos {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 15px 0;
+    font-size: 13px;
+}
+
+.lista-adjuntos li {
+    margin-bottom: 5px;
+}
+
+.lista-adjuntos a {
+    color: #4b58a7;
+    text-decoration: none;
+}
+
+.lista-adjuntos small {
+    display: block;
+    color: #777;
+    font-size: 11px;
+}
+
+/* Botones Adjuntar / Agregar */
+.btn-adjuntar, .btn-agregar {
+  border: none;
+  padding: 6px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  float: right;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-adjuntar {
+  background: #e0e0e0;
+}
+
+.btn-agregar {
+  background: #d8e7d1;
+  color: #30561f;
+  margin-top: 10px; 
+}
+
+/* ------------------------------------------- */
+/* ---------- PIE DE PÁGINA (Footer) ---------- */
+/* ------------------------------------------- */
+.detalle-footer {
+  text-align: left;         /* ✅ Alinea el lema a la izquierda */
+  margin: 10px 0 10px 40px; /* ✅ Agrega margen izquierdo para separarlo del borde */
+  font-family: "Just Another Hand", cursive;
+  font-size: 30px;
+  color: white;
+  text-shadow: 1px 1px 3px #000;
+  flex-shrink: 0;
+}
+

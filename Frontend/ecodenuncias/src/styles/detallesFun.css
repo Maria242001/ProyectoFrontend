@@ -1,0 +1,322 @@
+/*
+ * ====================================
+ * 1. Fondo y Layout Principal
+ * ====================================
+ */
+
+.fondo-pagina {
+    /* Fija el fondo para toda la pantalla */
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width:  100vw;
+    height: 100vh;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encabezado fijo en la parte superior */
+.encabezado-fijo {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+/* Contenedor principal sin scroll general */
+.main-content-area-fixed {
+    flex-grow: 1;
+    padding-top: 150px; /* espacio debajo del encabezado */
+    padding-bottom: 20px;
+    margin: 0 auto;
+    max-width: 1400px;
+    max-height: 650px;
+    width: 100%;
+    overflow-y: hidden; /* evita scroll general */
+}
+
+/*
+ * ====================================
+ * 2. Tarjeta principal y sub-cajas
+ * ====================================
+ */
+
+/* Tarjeta principal que contiene todas las sub-cajas */
+.main-details-card {
+    background-color: rgba(255, 255, 255, 0.6)!important;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    min-height: calc(100vh - 120px);
+    
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card body de la principal */
+.main-details-card .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    background-color: rgba(255, 255, 255, 0.6)!important;
+}
+
+/* Fila de columnas internas que crece para ocupar todo el espacio */
+.main-details-card .card-body>.row {
+    flex-grow: 1;
+}
+
+/* Título de sección */
+.titulo-seccion-detalles {
+    margin-top: -60px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #004d40;
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   Sub-caja 1: Estado
+   ========================================= */
+.sub-card.info-card {
+    max-height: 230px;       /* altura máxima */
+    width: 50%;             /* ocupa toda la columna */
+    overflow: hidden; 
+    top: -50px;       /* evita que el contenido sobresalga */
+    
+}
+
+/* Contenedor de scroll interno solo para contenido de la sub-caja */
+.sub-card.info-card .scroll-content-container {
+    max-height: 150px;       /* altura para scroll interno */
+    
+    padding-right: 5px;
+}
+
+/* Ajuste de texto interno */
+.sub-card.info-card p {
+    font-size: 0.8rem;
+    margin: 3px 0;
+    color: #333;
+}
+
+.sub-card-title {
+    font-size: 0.7rem;
+    margin-bottom: -4px;
+    margin-top: -25px;
+    
+}
+
+/* =========================================
+   Sub-caja 2: Adjuntos
+   ========================================= */
+.sub-card.adjuntos-card {
+    max-height: 170px;       /* altura máxima */
+    width: 50%;
+    overflow: hidden;
+    top: -80px;        /* evita que el contenido sobresalga */
+}
+
+/* Scroll interno para la lista de adjuntos */
+.sub-card.adjuntos-card .scroll-content-container {
+    max-height: 150px;       /* espacio para que el botón quede visible */
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Botón dentro de adjuntos (mantiene posición) */
+.adjuntos-card .d-grid {
+    margin-top: 5px;
+}
+
+/* =========================================
+   Sub-caja 3: Radicado
+   ========================================= */
+.sub-card.radicado-card {
+    height: 280px !important;       /* altura máxima */
+    min-width: 800px !important;
+    margin-left: -200px;
+    padding: 1px;
+    
+}
+
+.radicado-card {
+  padding-top: 40px !important; /* ajusta el valor según necesites */
+
+}
+
+.radicado-card .sub-card-title {
+  font-size: 1.2rem;   /* Ajusta el tamaño del texto */
+  font-weight: bold;    /* Opcional: más grueso */
+  margin-bottom: 0.6rem; /* Espacio debajo del título */
+}
+
+.radicado-card .radicado-info {
+  font-size: 1rem !important; /* más pequeño que el resto */
+  align-items: flex-start !important;
+}
+
+.radicado-card .radicado-numero {
+  font-size: 1.5rem;   /* más grande que los demás textos */
+  font-weight: bold;    /* destacado */
+  color: #333;          /* opcional: cambiar color */
+  margin-top: -30px ;
+  margin-left:  400px;
+}
+
+.radicado-card .sub-card-title.mt-3 {
+  margin-left: -730px; /* ajusta según lo necesites */
+}
+
+
+
+
+/* Scroll interno para el contenido del hecho */
+.hecho-contenido {
+    height: 95px;
+    overflow-y: auto;
+    background-color: #f0f8ff;
+    border: 1px solid #cceeff;
+    
+    padding: 10px;
+    font-size: 0.8rem;
+    
+}
+
+.sub-card.actividades-card {
+    max-height: 250px !important;  /* antes era 120px */
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #38a169;
+    width: 800px;
+    margin-left: -200px;
+    top: -70px;
+}
+
+
+/* 🔹 Título fuera del borde y centrado */
+.sub-card-title-actividades {
+    position: relative;
+    top: -18px;              /* Lo sube */
+    background: white;       /* Fondo para que no se mezcle con el borde */
+    width: fit-content;
+    margin: 0 auto;          /* Centrado */
+    padding: 0 10px;
+    font-weight: bold;
+    z-index: 5;
+    
+}
+
+/* 🔹 Caja de contenido más abajo */
+.actividades-contenido {
+    margin-top: -5px;        /* Ajusta para separar del título */
+    padding-top: 5px;       /* Baja el textarea sin mover la tarjeta */
+    height: 40px;
+}
+
+/* 🔹 Textarea con espacio */
+.actividades-contenido textarea {
+    margin-top: 10px;
+}
+
+/* 🔹 Botones más abajo (NO se mueven entre sí, solo toda la zona) */
+.zona-botones {
+    margin-top: 20px;
+}
+
+/* Tamaño igual de los dos botones */
+.btn-descargar,
+.btn-agregar {
+    width: 180px;
+}
+
+.btn-formato {
+    margin-top: 25px;   /* Solo baja este botón */
+}
+
+.btn-descarga {
+    margin-top: 25px;   /* Lo puedes mover diferente si quieres */
+}
+
+.btn-agregar {
+    margin-top: 1px;   /* Botón independiente */
+}
+
+
+/* Ajuste de posición — más abajo */
+.actividades-card .zona-botones {
+    margin-top: 125px !important;   /* baja toda la fila */
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;          /* separación entre botones */
+}
+
+
+/* === Posiciones individuales para cada botón === */
+
+/* Botón de Adjuntar */
+.boton-adjuntar-pos {
+    margin-top: 5px;
+    margin-left: 0px;   /* ajústalo como quieras */
+}
+
+/* Botón de Formato de Descarga */
+.boton-descargar-pos {
+    margin-top: 10px !important;
+    margin-left: 200px; /* ajústalo como quieras */
+}
+
+/* Botón Agregar */
+.boton-agregar-pos {
+    margin-top: 10px;
+    margin-left: 350px; /* ajústalo como quieras */
+}
+
+
+
+.modal-backdrop-custom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+}
+
+.modal-contenido-custom {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+/* =========================================
+   Frase final
+   ========================================= */
+.frase {
+    text-align: left;
+    font-style: italic;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 4px black;
+}

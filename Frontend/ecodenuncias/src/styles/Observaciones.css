@@ -1,0 +1,188 @@
+/* Quita márgenes y scroll de toda la página */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Fondo de pantalla completo */
+.fondo-pagina {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  color: #064e08;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Encabezado */
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+.ley {
+  color: #064e08;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.titulo-funcionario {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 32px;
+}
+
+.icono-funcionario {
+  width: 60px;
+}
+
+.logo {
+  width: 120px;
+}
+
+/* Contenedor de cajas */
+.contenedor-cajas {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+/* Cajas translúcidas */
+.caja {
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* Caja inferior */
+.caja1 {
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 500px;
+  width: 1350px;
+  margin-top: 60px;
+  margin-left: -250px;
+  transform: translate(20px, 20px);
+}
+
+/* Caja intermedia */
+.caja2 {
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 420px;
+  width: 1300px;
+  margin-top: 120px;
+  margin-left: -215px;
+  transform: translate(10px, 10px);
+}
+
+/* Caja superior */
+.caja3 {
+  background-color: rgba(255, 255, 255, 0.95);
+  position: relative;
+  padding: 25px;
+  height: 350px;
+  min-width:  1250px;
+  margin-top: 180px;
+  margin-left:  450px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;   /* elementos uno debajo de otro */
+  align-items: flex-start;  /* alinea todo a la izquierda */
+  padding: 25px;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;   /* cada fila de checkbox debajo de la otra */
+  align-items: flex-start;
+  gap: 10px;
+  white-space: nowrap;      /* evita que el texto se rompa */
+         /* permite scroll horizontal si es necesario */
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;      /* centra verticalmente checkbox y texto */
+  gap: 8px;
+  cursor: pointer;
+}
+
+.checkbox-right {
+  position: relative;
+  display: flex;
+  flex-direction: column;  /* mantiene los checkboxes uno debajo del otro */
+  align-items: flex-end;   /* los mueve a la derecha de la caja */
+  gap: 10px;
+  width: 100%; 
+  right: 20px;            /* importante para que se alineen al borde derecho */
+  top: -180px;
+}
+
+
+
+/* Títulos */
+.titulo-formato {
+  font-size: 24px;
+  color: #2b4d1e;
+  font-weight: bold;
+  margin-top: -40px;
+  margin-left: -1050px;
+}
+
+.titulo-observaciones {
+  font-size: 22px;
+  color: #2b4d1e;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: -70px;
+  margin-left: -30px;
+}
+
+.formulario-observaciones label input,
+.formulario-observaciones label textarea {
+  display: block;   /* fuerza a que ocupe toda la línea */
+  width: 100%;      /* opcional, ocupa todo el ancho de la caja */
+  margin-top: 5px;  /* pequeño espacio entre label y campo */
+}
+
+.campo-observaciones{
+  min-width: 1200px;
+  height: 100px;
+}
+
+
+
+
+.boton-anterior {
+  text-align: right;
+  margin-top: -95px;
+}
+
+.boton-anterior button {
+  background-color: #ccc  ;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Frase final */
+.frase {
+  text-align: center;
+  font-style: italic;
+  font-size: 18px;
+  margin-top: auto;
+  color: white;
+}

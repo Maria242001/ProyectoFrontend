@@ -1,0 +1,100 @@
+/* 🌿 Fondo general */
+.fondo-container {
+  min-height: 100vh;
+  width: 100%;
+  background: url("../assets/fondo.png") no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* 🔹 Barra superior */
+.barra-superior {
+  background: rgba(0, 0, 0, 0.2);
+  color: rgb(255, 255, 255, 0.8);
+}
+
+.ley-text {
+  font-size: 16px;
+  color: #1C109E
+}
+
+/* 🔹 Contenido principal */
+/* 🔹 Forzar que el contenido se alinee a la izquierda */
+.contenido {
+  margin-top: 3rem;
+  display: flex;             /* activa flexbox */
+  justify-content: flex-start !important; /* alinea a la izquierda */
+  align-items: flex-start;
+  gap: 2rem;                 /* separa logo y tarjeta */
+}
+
+
+/* 🖼 LOGO */
+.logo {
+  max-width: 100%;
+  width: 320px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+   height: auto;
+  display: block;
+
+
+}
+
+.logo-animado.activo {
+  transform: scale(1.08);
+}
+
+/* 📄 Tarjeta de bienvenida (derecha) */
+.bienvenida {
+  max-width: 700px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  color: #1a1a1a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); /* sombra visible */
+  text-align: justify;
+  transition: all 0.3s ease;
+  transform: translateX(300px); /* lo mueve a la derecha */
+  margin-top: 90px;
+}
+
+
+/* 🔘 Botón de ingresar */
+.btn-ingresar {
+  font-size: 1.1rem;
+  font-weight: 600;
+  transform: translateX(450px);
+}
+
+/* 📱 Responsividad */
+@media (max-width: 768px) {
+   .contenido {
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center;
+  }
+
+  .logo {
+    max-width: 200px;
+  }
+
+  .bienvenida {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    max-width: 160px;
+  }
+
+  .bienvenida {
+    font-size: 14px;
+    padding: 1.2rem;
+  }
+}

@@ -1,0 +1,407 @@
+/* Fondo ocupa toda la pantalla sin dejar blancos */
+.fondo-pagina {
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  /* evita scroll lateral */
+}
+
+/* Contenedor general sin desbordarse */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* Enlace de la ley */
+.ley {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  font-weight: bold;
+  color: #004aad;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* TITULO + ICONO RESPONSIVE */
+
+.icono-funcionario {
+    width: 60px !important;
+    height: 70px !important;
+    margin-left: 0;   /* Quita el valor negativo */
+    z-index: 20;
+}
+
+
+.title {
+    position: absolute;
+    top: 70px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #00ad31;
+    z-index: 20;      /* Asegura que se vea encima */
+    font-size: 1rem;
+}
+
+
+/* LOGO RESPONSIVE */
+.logo {
+    position: absolute;
+    
+    left: 1300px;
+    width: 200px !important;
+    height: 150px !important;
+    z-index: 20;
+}
+
+
+/* Sidebar */
+.layout-wrapper {
+  display: flex;
+  padding: 20px 40px;
+}
+
+.panel-usuario {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  border-radius: 20px;
+  width: 220px;
+  padding: 20px;
+  margin-left: -30px !important;
+  text-align: center;
+  z-index: 10;
+}
+
+.usuario-icono {
+  font-size: 3rem;
+}
+
+.menu-usuario {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-usuario li {
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.menu-usuario li:hover,
+.menu-usuario .activo {
+  background-color: #004aad;
+  color: white;
+}
+
+
+
+/* TARJETAS RESPONSIVE */
+.tarjetas {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 1px;
+  top: 70px;
+}
+
+.tarjetas .col-lg-3 {
+  flex: 1;
+  max-width: 25%;   /* 4 tarjetas por fila */
+  display: flex;
+  justify-content: center;
+  padding: 0.5px;
+
+}
+
+
+.tarjeta {
+  width: 180px;
+  max-height: 60px;
+  overflow: hidden;
+  display: flex;
+  background-color: #1b5e20;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  
+}
+
+
+.tarjeta:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.tarjeta img {
+  width: 45px;
+  height: 45px;
+}
+
+.tarjeta h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.tarjeta p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.tarjeta.pendiente {
+  background-color: rgba(255, 255, 255, 0.3)
+}
+
+.tarjeta.resueltas {
+  background-color: rgba(255, 255, 255, 0.3)
+}
+
+.tarjeta.tramite {
+  background-color: rgba(255, 255, 255, 0.3)
+}
+
+.tarjeta.vencidas {
+  background-color: rgba(255, 255, 255, 0.3)
+}
+
+
+.icono-pendientes {
+  background-color: #044d22;
+  /* verde */
+  padding: 3px;
+  margin: 10px;
+  margin-left: -5px;
+}
+
+.icono-resueltas {
+  background-color: #044d22;
+  /* verde */
+  padding: 3px;
+  margin: 10px;
+  margin-left: -10px;
+}
+
+.icono-tramite {
+  background-color: #044d22;
+  /* verde */
+  padding: 3px;
+  margin: 10px;
+  margin-left: -30px;
+}
+
+
+.icono-vencidas {
+  background-color: #044d22;
+  /* verde */
+  padding: 3px;
+  margin: 10px;
+  margin-left: -20px;
+}
+
+
+.main-content-area {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+
+/* ===============================
+   CONTENEDOR GENERAL DE GRÁFICOS
+   =============================== */
+.contenedor-graficos {
+    width: 100% !important;
+    background-color:rgba(255, 255, 255, 0.9);
+    min-width: auto !important;
+    margin: 0 auto; /* Centra el contenedor */
+    background: rgba(0,0,0,0.10);
+    padding: 10px;
+    border-radius: 20px;
+    display: block !important;
+    flex-direction: column;
+    margin-top: 90px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    min-height: auto;
+    height: 500px !important;
+}
+
+/* ===============================
+   FILA DE LOS DOS GRÁFICOS
+   =============================== */
+.graficos {
+    display: flex;
+    flex-wrap: nowrap !important;  /* ❗ Tres gráficos por fila */
+    justify-content: space-between;
+    gap: 25px !important;
+    height: 500px !important;
+    overflow: hidden;
+}
+/* ===============================
+   CAJAS DE CADA GRÁFICO
+   =============================== */
+.grafico {
+    flex: 1 !important;
+    width: 300px !important;       /* ❗ Permite que crezcan libremente */
+    max-height: 140px !important;
+    height: 140px !important;
+}
+.grafico-asignacion{
+  width: 600px !important;
+  right: 150px;
+}
+
+
+
+.grafico-estado,
+.grafico-asignacion,
+.grafico-cumplimiento {
+    min-height: 300px;
+}
+
+
+.grafico canvas,
+.grafico svg {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+  /* hace que se ajuste sin deformarse */
+}
+
+
+
+
+/* Gauge */
+.gauge-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gauge-arc {
+    width: 120px;
+    height: 60px;
+    background: #eee;
+    border-radius: 120px 120px 0 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.gauge-fill {
+    width: 120px;
+    height: 60px;
+    background: #2ecc71;
+    transform-origin: bottom center;
+    position: absolute;
+    bottom: 0;
+}
+
+.gauge-text {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.titulo-notificaciones {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #000;
+    margin-top: -190px;
+}
+
+.notificaciones {
+    background: white;
+   
+    
+    border-radius: 15px;
+}
+
+.textarea-notificaciones {
+    width: 100%;
+    height: auto;
+    resize: none;
+    border: none;
+    outline: none;
+    overflow-y: auto;
+}
+
+
+
+/* Ajuste responsive del título e icono */
+@media (max-width: 768px) {
+    .title {
+        top: 40px;
+        left: 15px;
+        font-size: 0.9rem;
+    }
+
+    .icono-funcionario {
+        width: 45px !important;
+        height: 55px !important;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .tarjetas {
+        flex-wrap: wrap !important;
+        gap: 10px;
+    }
+
+    .tarjetas .col-lg-3 {
+        max-width: 45% !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .tarjetas .col-lg-3 {
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .contenedor-graficos {
+        height: auto !important;
+        padding: 20px;
+    }
+
+    .graficos {
+        flex-wrap: wrap !important;
+        height: auto !important;
+    }
+
+    .grafico {
+        max-height: 250px !important;
+        height: 250px !important;
+        width: 100% !important;
+    }
+}
+
+.grafico canvas,
+.grafico svg {
+    max-width: 100% !important;
+    max-height: 100% !important;
+}
+
+@media (max-width: 1000px) {
+    .notificaciones {
+        width: 100% !important;
+        margin-top: 20px;
+    }
+
+    .titulo-notificaciones {
+        margin-top: 0 !important;
+    }
+}
+

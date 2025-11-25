@@ -1,0 +1,548 @@
+/*
+ * ====================================
+ * 1. Estilos de Fondo y Layout Principal 
+ * ====================================
+ */
+
+.fondo-pagina {
+    width: 100% !important;
+    min-height: 100vh;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    overflow-x: hidden !important;
+}
+
+
+/* Eliminar espacio blanco lateral sin dañar el diseño */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+     box-sizing: border-box;
+}
+
+
+
+
+
+.layout-wrapper {
+    display: flex;
+    max-width: 1500px; 
+    margin: 20px auto;
+    padding-top: 60px; 
+    gap: 20px; 
+    height: calc(100vh - 100px); 
+    overflow: hidden; 
+    flex-grow: 1; 
+}
+
+.ley {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #008080; 
+    text-decoration: underline;
+    font-size: 0.9rem;
+    z-index: 101; 
+}
+
+.btn-regresar {
+    background-color: #008080; 
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s;
+}
+
+.btn-regresar:hover {
+    background-color: #006666;
+}
+
+/*
+ * ====================================
+ * 2. Estilos del Encabezado (Header) 
+ * ====================================
+ */
+
+
+
+.titulo-funcionario-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 500px;
+}
+.icono-funcionario {
+    width: 60px;         /* tamaño correcto */
+    height: auto;        /* no se deforma */
+    object-fit: contain; /* mantiene proporciones */
+    display: block;      /* evita espacios extra */
+}
+
+.titulo {
+    position: absolute;
+    font-size: 2rem; 
+    color: #004d40; 
+    margin: 0;
+    top: 85px;
+    left: 80px;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    top: -70px;
+}
+
+/*
+ * ====================================
+ * 3. Estilos del Sidebar (Panel Usuario)
+ * ====================================
+ */
+
+.panel-usuario {
+    width: 250px;
+    min-width: 200px; 
+    padding: 20px;
+    border-radius: 8px;
+    height: fit-content; 
+    position: sticky;
+    top: 90px; 
+    box-shadow: none !important; 
+    border: none !important; 
+    background-color: rgba(255, 255, 255, 0.7); 
+    margin: 20px;
+}
+
+.usuario-icono {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.usuario-nombre,
+.usuario-correo,
+.menu-usuario li {
+    color: #004d40; 
+}
+
+.usuario-nombre {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0; 
+}
+
+.usuario-correo {
+    font-size: 0.8rem;
+    text-align: center;
+    color: #333; 
+    margin-bottom: 30px;
+}
+
+.menu-usuario {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-usuario li {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 12px; 
+    transition: background-color 0.2s;
+    color: #004d40; 
+}
+
+.menu-usuario li:hover {
+    background-color: rgba(0, 128, 128, 0.2); 
+}
+
+.menu-usuario li.activo {
+    background-color: #008080; 
+    color: white;
+    font-weight: bold;
+}
+
+/*
+ * ====================================
+ * 4. Estilos de la Tarjeta de Contenido Principal (LA CAJA)
+ * ====================================
+ */
+
+.main-content-area {
+    flex-grow: 1; 
+    padding: 0 20px 0 0; 
+}
+
+.main-content-card {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    border: none !important;
+    border-radius: 8px;
+    height: fit-content;
+    padding-bottom: 20px;
+    min-height: 600px;
+    width: 1200px;
+    margin-top: 60px;
+}
+
+.titulo-seccion-card {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #004d40;
+    margin-bottom: 0;
+}
+
+/*
+ * ====================================
+ * 🔹 Filtros y buscador
+ * ====================================
+ */
+
+.filtros-container {
+    padding-left: 0;
+    position: relative;
+    z-index: 10;
+}
+
+.search-input {
+    max-width: 250px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 100;
+    pointer-events: auto !important;
+    color: #000;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #008080;
+    box-shadow: 0 0 4px rgba(0, 128, 128, 0.4);
+}
+
+.search-button,
+.filter-button {
+    background-color: #008080;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    
+}
+
+.search-button:hover,
+.filter-button:hover {
+    background-color: #006666;
+}
+
+.filter-select {
+    max-width: 150px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 🔽 Ventana flotante del filtro */
+.filtro-flotante {
+  position: absolute;
+  top: -160px;
+  right: 60px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  padding: 8px 12px;
+  width: 200px;
+  z-index: 999;
+  font-family: "Poppins", sans-serif;
+  animation: aparecerFiltro 0.25s ease-in-out;
+}
+
+@keyframes aparecerFiltro {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.filtro-titulo {
+  background-color: #1b5e20;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.filtro-titulo::before {
+  content: "🔎";
+  font-size: 0.9rem;
+}
+
+.filtro-flotante .form-check {
+  margin-bottom: 5px;
+  font-size: 0.85rem;
+}
+
+.filtro-flotante .form-check-input[type="checkbox"],
+.filtro-flotante .form-check-input[type="radio"] {
+  accent-color: #1b5e20;
+}
+
+/* 🔹 Flechita decorativa */
+.filtro-flotante::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 20px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #ffffff transparent transparent transparent;
+  filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.2));
+}
+
+/* 🔧 Corrección para permitir escribir en el input */
+.filtros-container {
+  position: relative;
+  z-index: 2000 !important;
+}
+
+.search-input {
+  position: relative !important;
+  z-index: 3000 !important;
+  pointer-events: auto !important;
+  background-color: #fff !important;
+}
+
+.filtro-dropdown {
+  position: relative;
+  z-index: 1000 !important;
+}
+
+.filtro-flotante {
+  z-index: 4000 !important;
+}
+
+.card, .card-body, .container, .row, .col {
+  position: relative;
+  z-index: 1;
+}
+
+header, .encabezado, .fondo-pagina {
+  z-index: auto !important;
+}
+
+
+/*
+ * ====================================
+ * Tabla y contenido
+ * ====================================
+ */
+
+.tabla-asignadas {
+    background-color: white;
+    border-radius: 8px;
+    border-collapse: separate; 
+    border-spacing: 0;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.tabla-asignadas thead {
+    background-color: rgba(0, 128, 128, 0.9); 
+    color: white;
+}
+
+.tabla-asignadas th,
+.tabla-asignadas td {
+    padding: 10px 8px;
+    border: none !important;
+    vertical-align: middle;
+    border-top: 1px solid rgba(0, 0, 0, 0.1) !important; 
+    color: #333;
+}
+
+.tabla-asignadas tbody tr:first-child td {
+    border-top: none !important;
+}
+
+.tabla-asignadas tbody tr:hover {
+    background-color: rgba(0, 128, 128, 0.1);
+}
+
+.estado-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+}
+
+.estado-badge.en-tramite {
+    background-color: orange;
+}
+.estado-badge.Pendiente {
+    background-color: orange;
+}
+
+.estado-badge.resuelta {
+    background-color: #38a169;
+}
+
+.estado-badge.vencida {
+    background-color: #e53e3e;
+}
+
+.detalle-link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-left: 5px;
+    color: #008080;
+}
+
+.paginacion-container {
+    color: #004d40;
+    font-size: 0.9rem;
+}
+
+.btn-paginacion {
+    background-color: #008080;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.btn-paginacion:hover {
+    background-color: #006666;
+}
+
+
+.btn-regresar-tabla {
+  position: absolute;
+  top: 100px !important;
+  right: 15px;
+  background-color: #2b7a0b;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  padding: 8px 14px;
+  z-index: 2;
+  transition: 0.3s;
+}
+
+.btn-regresar-tabla:hover {
+  background-color: #1e5708;
+}
+
+
+/*
+ * ====================================
+ * 5. Estilos del Footer
+ * ====================================
+ */
+
+.frase {
+    width: 100%;
+    text-align: left;
+    padding: 15px 0;
+    font-size: 2rem;
+    color: white;
+    font-style: italic;
+    font-weight: 500;
+    position: fixed;
+    bottom: -10px;
+    margin-left: 10px;
+    z-index: 1;
+}
+
+.paginacion-izquierda {
+  margin-top: 15px;
+  justify-content: flex-start !important;
+  text-align: right !important;
+}
+
+
+
+/*
+ * ====================================
+ * Media Queries
+ * ====================================
+ */
+
+@media (max-width: 992px) {
+    .layout-wrapper {
+        flex-direction: column;
+        height: auto; 
+        overflow: visible; 
+        padding-top: 100px;
+        gap: 10px;
+    }
+
+    .panel-usuario {
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;
+        top: auto; 
+    }
+    
+    .main-content-area {
+        padding: 0 10px;
+    }
+
+    .main-content-card {
+        min-height: auto;
+    }
+}
+
+/* 🔹 Asegurar que nada bloquee el input de búsqueda */
+.filtros-container {
+  position: relative;
+  z-index: 100;
+}
+
+.search-input {
+  position: relative !important;
+  z-index: 1000 !important;
+  background-color: #fff !important;
+  pointer-events: auto !important;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: #fff !important;
+  opacity: 1 !important;
+}
+
+.filtro-dropdown {
+  position: relative;
+  z-index: 10;
+}
+
+.card, .card-body, .container, .row, .col {
+  z-index: 1;
+}

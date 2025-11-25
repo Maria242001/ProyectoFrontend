@@ -1,0 +1,24 @@
+.ayuda-card {
+  border-radius: 15px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* blanco semi-transparente */
+  margin-top: 100px; /* baja la tarjeta hacia abajo */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* sombra ligera */
+}
+
+.ayuda-content {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.ayuda-content h2 {
+  color: #2a5d22;
+  margin-top: 20px;
+}
+
+.ayuda-content p,
+.ayuda-content li {
+  font-size: 1rem;
+  line-height: 1.6;
+}
