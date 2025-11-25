@@ -1,0 +1,81 @@
+/* Fondo general */
+.detalle-solicitud-fondo {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+/* Tarjetas principales */
+.card {
+  border-radius: 20px !important;
+  backdrop-filter: blur(4px);
+}
+
+/* Tarjetas internas */
+.card.shadow-sm {
+  border-radius: 18px !important;
+}
+
+/* Título */
+.titulo-solicitudes {
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Secciones */
+h4, h6 {
+  font-weight: bold;
+}
+
+/* Textos vacíos (por si luego no hay info) */
+.placeholder {
+  color: #777;
+}
+
+/* Textareas estilo suave */
+textarea.form-control {
+  background: #ffffffdd;
+  border-radius: 12px !important;
+  border: 1px solid #cfd8dc;
+  resize: none;
+}
+
+/* Botón Regresar arriba */
+.btn-regresar {
+  border-radius: 10px !important;
+  padding: 6px 16px !important;
+}
+
+/* Botones inferiores */
+.btn-action {
+  border-radius: 12px !important;
+  padding: 6px 18px;
+}
+
+/* Lista de adjuntos */
+.list-group-item {
+  font-size: 0.9rem;
+  border-radius: 10px !important;
+  margin-bottom: 5px;
+  background: #f7f9fa;
+}
+
+/* Badge de estado */
+.badge-estado {
+  font-size: 0.9rem !important;
+  padding: 5px 10px !important;
+  border-radius: 8px !important;
+}
+
+/* Espaciados */
+.mb-3, .mb-2 {
+  margin-bottom: 15px !important;
+}
+
+/* Sombra suave */
+.shadow {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
+}

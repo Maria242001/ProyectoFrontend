@@ -19,7 +19,7 @@ import ConsultasA from "../pages/administrador/consultas.jsx";
 import Sidebar from "../components/sidebar.jsx";
 import Ayuda from "../pages/usuario/ayuda.jsx";
 import SolicitudesAdmin from "../pages/administrador/solicitudesAdmin.jsx";
-
+import DetalleSolicitud from "../pages/administrador/detalleSolicitudes.jsx";
 
 //IMPORTS DE FUNCIONARIO
 import Denuncias1 from "../pages/funcionario/denuncias1.jsx";
@@ -66,6 +66,7 @@ function AppRouter() {
       <Route path="/admin/consulta-admin" element={<ConsultasA />} />
       <Route path="/admin/solicitudes" element={<SolicitudesAdmin />} /> 
       <Route path="/admin/listado-solicitudes" element={<ListadoSolicitudes />} />
+      <Route path="/admin/detalle-Solicitud" element={<DetalleSolicitud />} />
 
 
 
